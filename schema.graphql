@@ -1,0 +1,20 @@
+directive @customResolver on FIELD_DEFINITION
+
+type User {
+  id: String!
+  name: String!
+  posts: [Post!]! @customResolver
+}
+
+type Post {
+  id: String!
+  title: String!
+}
+
+extend type Query {
+  # 自分の組織の全てのユーザーを取得
+  allUsersInOrganization: [User!]!
+
+  # 自身の情報を取得
+  user: User!
+}
