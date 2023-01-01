@@ -1,12 +1,12 @@
-import { Resolvers } from "./resolvers";
+import { Resolvers } from "./schemaHelper";
 
 export const resolvers: Resolvers = {
   Query: {
     user: async ()=>{
       return {
         id: "uhyo",
-        name: "uhyo"
-      }
+        name: "uhyo",
+      };
     },
     allUsersInOrganization: async () => {
       return [{
